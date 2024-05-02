@@ -6,13 +6,19 @@ const ProductCard = ({data}) => {
     <div className='mb-10'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 place-items-center'>
             {data.map((data)=>(
-                <div className='group' key={data.id}>
+                <div 
+                data-aos = 'fade-up'
+                data-aosDelay = {data.aosDelay}
+
+                className='group ' key={data.id}>
                     <div className='relative'>
+                        
                         <img 
                         src={data.img}
                         alt=''
-                        className='h-[200] w-[260] object-cover rounded-md'
+                        className='h-[200] w-[260] object-cover rounded-md '
                         />
+                        
                         <div className='hidden group-hover:flex absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2
                         h-full w-full items-center justify-center group-hover:backdrop-blur-sm duration-200'>
                             <Button

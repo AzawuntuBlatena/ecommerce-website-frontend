@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <div className="dark:bg-gray-900 bg-white">
       <div className="container ">
-        <div className="grid sm:grid-cols-4 py-20 pt-5">
+        <div className="grid sm:grid-cols-4 py-10">
           {/* company details */}
           <div className="px-4 py-8">
             <a
@@ -43,14 +43,14 @@ const Footer = () => {
             </p>
             <a
               href="#"
-              className="inline-block bg-primary/90 text-white px-4 py-2 rounded-full mt-4 text-sm "
+              className="inline-block bg-primary/90 text-white px-4 py-2 whitespace-nowrap rounded-full mt-4 text-sm sm:text-base md:text-sm "
             >
               Visit Our Youtube Channel
             </a>
           </div>
-          <div className="col-span-2 grid sm:grid-cols-2 md:pl-10">
-            <div className="py-8 px-4">
-              <h1 className="text-xl font-bold sm:text-left mb-3">
+          <div className="col-span-2 grid grid-cols-2 md:pl-10 ">
+            <div className="py-8 px-3">
+              <h1 className="text-xl font-bold sm:text-left mb-3 whitespace-nowrap">
                 Iportant Links
               </h1>
               <ul className="space-y-3">

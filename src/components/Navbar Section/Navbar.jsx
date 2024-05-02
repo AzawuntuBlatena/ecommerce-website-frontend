@@ -15,7 +15,9 @@ const DropdownList = [
   { id: 2, name: "Best Selling", link: "#" },
   { id: 3, name: "Top Rated", link: "#" },
 ];
-function Navbar() {
+
+
+function Navbar({handlePopUp}) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const toggleDropdown = () => {
@@ -34,6 +36,8 @@ function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+
   return (
     <div className="relative  bg-white dark:bg-gray-900 dark:text-white duration-200 z-20">
       <div className="py-4 ">
@@ -67,9 +71,7 @@ function Navbar() {
                     Quick Links
                     <span>
                       <RiArrowDropDownLine
-                        className={`group-hover:rotate-180 duration-300 ${
-                          isDropdownOpen ? "rotate-180" : ""
-                        }`}
+                        className={`text-2xl duration-300 }`}
                       />
                     </span>
                   </a>
@@ -84,7 +86,7 @@ function Navbar() {
                           <li key={index}>
                             <a
                               href={data.link}
-                              className="inline-block w-full px-2 hover:bg-primary/20 rounded-md font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
+                              className="inline-block w-full px-2 hover:bg-primary/40 rounded-md font-semibold text-gray-500 hover:text-black dark:hover:text-white duration-200"
                             >
                               {data.name}
                             </a>
@@ -99,7 +101,7 @@ function Navbar() {
           </div>
           <div className="flex items-center justify-between gap-4">
             {/* search icon */}
-            <div className="relative group hidden sm:block">
+            <div className="relative group hidden lg:block">
               <input
                 type="text"
                 placeholder="search here"
@@ -108,7 +110,7 @@ function Navbar() {
               <IoMdSearch className="text-xl text-gray-600 group-hover:text-primary dark:text-gray-400 absolute top-1/2 -translate-y-1/2 right-3 duration-200" />
             </div>
             {/* cart-buton */}
-            <button className="relative p-3">
+            <button className="relative p-3" onClick={handlePopUp}>
               <IoCart className="text-xl text-gray-600 dark:text-gray-400" />
               <div className="w-4 h-4 bg-red-500 text-white rounded-full absolute top-0 right-0 flex items-center justify-center text-xs">
                 4

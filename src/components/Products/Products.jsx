@@ -104,7 +104,7 @@ const productsData2=[
 
 const Products = () => {
   return (
-    <div>
+    <div className='mx-10 sm:mx-0'>
         <div className='container'>
             {/* heading */}
             <Heading title="Our Products" subtitle="Explore Our Products" />

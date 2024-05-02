@@ -19,6 +19,7 @@ const BlogData = [
         quasi harum, ratione error!`,
         published: "jan 20, 2024 by mamasita",
         img: image1,
+        aosDelay:'0'
     },
 
     {
@@ -30,6 +31,7 @@ const BlogData = [
         quasi harum, ratione error!`,
         published: "jan 20, 2024 by andom",
         img: image2,
+        aosDelay:'0'
     },
 
     {
@@ -41,12 +43,17 @@ const BlogData = [
         quasi harum, ratione error!`,
         published: "jan 20, 2024 by azabla",
         img: image3,
+        aosDelay:'0'
     },
 ]
 
 const Blogs = () => {
 
-    const [expand, setExpand] = useState(false)
+    const [expand, setExpand] = useState(null)
+    function handleShowMore(getCurrentId){
+        setExpand(getCurrentId === expand ? null:getCurrentId)
+        
+    }
 
   return (
     
@@ -55,12 +62,15 @@ const Blogs = () => {
             {/* heading */}
             <Heading title="Our Blogs" subtitle="Explore Our Blogs" />
             {/* Body */}
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
-            gap-6 gap-y-8 sm:gap-4 md:gap-7'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 
+            gap-6 gap-y-8 sm:gap-4 md:gap-7 '>
                 {
                    BlogData.map((data,index) => (
                     
-                    <div key={data.id} className='bg-white darck:bg-gray-900 rounded-t-2xl'>
+                    <div
+                    data-aos = 'fade-up'
+                    data-aosDelay = {data.aosDelay}
+                    key={data.id} className='bg-white darck:bg-gray-900 rounded-t-2xl p-5'>
                         {/* image section */}
                        <div className='overflow-hidden mb-2 rounded-2xl '>
                             <img src={data.img} alt=""
@@ -71,11 +81,11 @@ const Blogs = () => {
                        <div className='space-y-2'>
                         <p className='text-gray-500 text-sm'>{data.published}</p>
                         <p className='font-bold line-clamp-1'>{data.title}</p>
-                        <p className ={`${expand?"block":"line-clamp-2"} text-gray-600 text-sm  dark:text-gray-400 `}> {data.subtitle}</p>
+                        <p className ={`${expand === data.id?"block":"line-clamp-2"} text-gray-600 text-sm  dark:text-gray-400 `}> {data.subtitle}</p>
                         <div className='flex justify-center '>
                         <button 
-                        onClick={ ()=> setExpand(!expand) }
-                        className="text-blue-500 hover:text-blue-900">
+                        onClick={ ()=> handleShowMore(data.id) }
+                        className="text-blue-400 hover:text-blue-600">
                         {expand? "Seeless" : "SeeMore"}
                         </button>
                         </div>

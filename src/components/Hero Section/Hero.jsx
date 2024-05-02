@@ -32,7 +32,7 @@ const HeroSlides = [
   },
 ];
 
-const Hero = () => {
+const Hero = ({handlePopUp}) => {
   const settings = {
     dots: false,
     arrows: false,
@@ -59,28 +59,46 @@ const Hero = () => {
                     className="flex flex-col justify-center gap-4 sm:pl-3 pt-12 
                             sm:pt-0 text-center sm:text-left order-2 sm:order-1 "
                   >
-                    <h1 className="text-2xl sm:text-6xl lg:text-2xl font-bold">
+                    <h1 
+                    data-aos='zoom-out' 
+                    data-aos-duration = '500'
+                    data-aos-once = 'true'
+                    className="text-2xl sm:text-6xl lg:text-2xl font-bold">
                       {data.subtitle}
                     </h1>
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
+                    <h1 
+                    data-aos='zoom-out' 
+                    data-aos-duration = '500'
+                    data-aos-once = 'true'
+                    className="text-5xl sm:text-6xl lg:text-7xl font-bold">
                       {data.title}
                     </h1>
                     <h1
-                      className="text-5xl uppercase text-white dark:text-white/5 sm:text-[80px]
+                    data-aos='zoom-out' 
+                    data-aos-duration = '500'
+                    data-aos-once = 'true'
+                    className="text-5xl uppercase text-white dark:text-white/5 sm:text-[80px]
                                  md:text-[100] xl:text-[150] font-bold"
                     >
                       {data.title2}
                     </h1>
-                    <div>
+                    <div
+                    data-aos='fade-up'
+                    data-aos-duration = '500'
+                    data-aos-offset = '0'
+                    data-aos-delay = '300'>
                       <Button
                         text="Shop By Cattagory"
                         bgColor="bg-primary"
                         textColor="text-white"
+                        handler = {handlePopUp}
                       />
                     </div>
                   </div>
                   <div className="order-1 sm:order-2">
-                    <div>
+                    <div 
+                    data-aos='zoom-in'
+                    data-aos-once = 'true'>
                       <img
                         src={data.img}
                         alt={data.title}
