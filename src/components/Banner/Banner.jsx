@@ -3,7 +3,7 @@ import Button from '../Shared/Button'
 
 const Banner = ({data}) => {
   return (
-    <div className='min-h-[450px] flex items-center justify-center py-6'>
+    <div className='min-h-[450px] flex items-center justify-center py-14'>
         <div className='container'>
             <div style={{backgroundColor:data.bgColor}} className='grid grid-cols-1 md:grid-cols-3 items-center gap-6 text-white rounded-3xl'>
                 

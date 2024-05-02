@@ -47,7 +47,7 @@ const Hero = () => {
   return (
     <div className="container">
       <div
-        className="overflow-hidden rounded-3xl min-h-[550px] sm:min-h-[550px]
+        className="overflow-hidden rounded-3xl min-h-[445px] sm:min-h-[500px]
         flex justify-center items-center hero-bg-color"
       >
         <div className="container pb-8 sm:pb-0">
